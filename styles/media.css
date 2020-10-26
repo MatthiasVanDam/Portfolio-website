@@ -1,0 +1,28 @@
+@media screen and (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+  .ham {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .section-inner,
+  .nav-inner,
+  .header-inner,
+  .footer-inner {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  #ham-nav {
+    width: 100%;
+  }
+  .section-inner,
+  .nav-inner,
+  .header-inner,
+  .footer-inner {
+    width: 90%;
+  }
+}
