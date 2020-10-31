@@ -438,6 +438,20 @@ section {
   background-color: var(--lightest-navy);
 }
 
+.form-inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.form-inner:nth-child(2) {
+  margin-bottom: 5px;
+}
+
 footer {
   display: -webkit-box;
   display: -ms-flexbox;
