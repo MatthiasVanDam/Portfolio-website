@@ -95,32 +95,32 @@ ol {
   list-style: outside none none;
 }
 
-nav ol li {
-  margin: 0px 5px;
-  counter-increment: item 1;
-}
-
-ol li a {
-  padding: 10px;
-}
-
-ol li a:hover {
-  color: var(--green);
-}
-
-ol li a::before {
-  content: "0" counter(item) ".";
-  margin-right: 5px;
-  color: var(--green);
-  text-align: right;
-}
-
 a {
   display: inline-block;
   text-decoration: none;
   text-decoration-skip-ink: auto;
   color: inherit;
   cursor: pointer;
+}
+
+ol li a:hover {
+  color: var(--green);
+}
+
+.nav-inner ol li {
+  margin: 0px 5px;
+  counter-increment: item 1;
+}
+
+.nav-inner ol li a {
+  padding: 10px;
+}
+
+.nav-inner ol li a::before {
+  content: "0" counter(item) ".";
+  margin-right: 5px;
+  color: var(--green);
+  text-align: right;
 }
 
 .button {
@@ -278,6 +278,11 @@ header {
 .section-inner,
 footer-inner {
   width: 65%;
+}
+
+section .content {
+  display: flex;
+  justify-content: center;
 }
 
 header h1 {
