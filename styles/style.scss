@@ -350,6 +350,14 @@ section {
   background-color: var(--lightest-navy);
 }
 
+//ContactForm
+.form-inner {
+  display: flex;
+  flex-direction: column;
+}
+//Fixed Social-links and emailadress
+
+//Footer
 footer {
   display: flex;
   align-items: center;
