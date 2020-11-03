@@ -13,6 +13,16 @@
   .footer-inner {
     width: 80%;
   }
+  .section-inner .content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 30px 0px;
+  }
+  #about .intro {
+    padding: 0;
+  }
 }
 
 @media screen and (max-width: 450px) {

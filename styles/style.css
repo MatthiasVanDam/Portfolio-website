@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400&family=Roboto+Mono&display=swap");
 :root {
   --dark-navy: #020c1b;
@@ -11,6 +12,7 @@
   --white: #e6f1ff;
   --green: #64ffda;
   --green-tint: rgba(100, 255, 218, 0.1);
+  --transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
   --font-sans: "Calibre", "San Francisco", "SF Pro Text", -apple-system,
     system-ui, sans-serif;
   --font-mono: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
@@ -44,6 +46,35 @@ h6 {
   font-weight: 600;
   color: var(--lightest-slate);
   line-height: 1.1;
+}
+
+p > a {
+  display: inline-block;
+  text-decoration: none;
+  text-decoration-skip-ink: auto;
+  position: relative;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+  cursor: pointer;
+  color: var(--green);
+}
+
+p > a::after {
+  content: "";
+  display: block;
+  width: 0px;
+  height: 1px;
+  position: relative;
+  background-color: var(--green);
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+  opacity: 0.5;
+}
+
+p > a:hover:after {
+  width: 100%;
+  left: 0;
+  opacity: 1;
 }
 
 nav {
@@ -349,7 +380,7 @@ header {
 .header-inner,
 .section-inner,
 footer-inner {
-  width: 65%;
+  width: 60%;
 }
 
 section .content {
@@ -359,6 +390,7 @@ section .content {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  padding: 100px 50px;
 }
 
 header h1 {
@@ -380,7 +412,7 @@ header h3 {
 
 header p {
   max-width: 500px;
-  font-size: clamp(14px, 5vw, 16px);
+  font-size: clamp(12px, 5vw, 16px);
   font-family: var(--font-mono);
   color: var(--slate);
   margin: 30px 0;
@@ -438,7 +470,90 @@ section {
   background-color: var(--lightest-navy);
 }
 
-.form-inner {
+#about,
+#work,
+#contact {
+  scroll-margin: 100px;
+}
+
+#about .intro {
+  padding-right: 40px;
+}
+
+#about p {
+  text-align: justify;
+}
+
+#about .photo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  background-color: grey;
+}
+
+#about ul {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(140px, 200px))[2];
+      grid-template-columns: repeat(2, minmax(140px, 200px));
+  padding: 0px;
+  margin: 40px 0px 0px;
+  overflow: hidden;
+  list-style: outside none none;
+}
+
+#about li {
+  position: relative;
+  margin-bottom: 10px;
+  padding-left: 20px;
+  font-family: var(--font-mono);
+  font-size: 14px;
+}
+
+#about li:before {
+  content: "▹";
+  position: absolute;
+  left: 0px;
+  color: var(--green);
+  font-size: var(--fz-sm);
+}
+
+#contact .content {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#contact h1 {
+  font-size: 30px;
+  margin-top: 40px;
+}
+
+#contact .content-intro {
+  width: 55%;
+  font-size: 18px;
+  color: var(--lightest-slate);
+  text-align: center;
+  margin: 60px 0px;
+}
+
+#contact form {
+  width: 55%;
+  margin-bottom: 60px;
+}
+
+#contact .form-inner {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -448,8 +563,50 @@ section {
           flex-direction: column;
 }
 
-.form-inner:nth-child(2) {
-  margin-bottom: 5px;
+#contact input,
+#contact textarea {
+  font-size: 18px;
+  font-family: var(--font-mono);
+  color: var(--lightest-slate);
+  margin-bottom: 20px;
+  background: -webkit-gradient(linear, left top, left bottom, from(var(--light-slate)), to(var(--light-slate))) center bottom 5px/calc(100% - 20px) 2px no-repeat;
+  background: linear-gradient(var(--light-slate), var(--light-slate)) center bottom 5px/calc(100% - 20px) 2px no-repeat;
+  background-color: var(--navy);
+  border: none;
+  outline: none;
+}
+
+#contact input {
+  padding: 10px 10px 20px 10px;
+}
+
+#contact textarea {
+  padding: 0px 10px;
+  resize: none;
+}
+
+#contact .form-inner input::-webkit-input-placeholder,
+#contact .form-inner textarea::-webkit-input-placeholder {
+  font-family: var(--font-mono);
+  color: var(--light-slate);
+}
+
+#contact .form-inner input:-ms-input-placeholder,
+#contact .form-inner textarea:-ms-input-placeholder {
+  font-family: var(--font-mono);
+  color: var(--light-slate);
+}
+
+#contact .form-inner input::-ms-input-placeholder,
+#contact .form-inner textarea::-ms-input-placeholder {
+  font-family: var(--font-mono);
+  color: var(--light-slate);
+}
+
+#contact .form-inner input::placeholder,
+#contact .form-inner textarea::placeholder {
+  font-family: var(--font-mono);
+  color: var(--light-slate);
 }
 
 footer {
