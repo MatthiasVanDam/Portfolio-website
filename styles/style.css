@@ -569,28 +569,6 @@ section {
           flex-direction: column;
 }
 
-#contact .form-group {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-#contact .error small {
-  text-align: center;
-  margin-bottom: 20px;
-  color: red;
-}
-
-#contact .success small {
-  text-align: center;
-  margin-bottom: 20px;
-  color: var(--green);
-}
-
 #contact input,
 #contact textarea {
   font-size: 18px;
@@ -602,6 +580,60 @@ section {
   background-color: var(--navy);
   border: none;
   outline: none;
+}
+
+#contact input.error,
+#contact textarea.error {
+  background: -webkit-gradient(linear, left top, left bottom, from(#ff6d6d), to(#ff6d6d)) center bottom 5px/calc(100% - 20px) 2px no-repeat;
+  background: linear-gradient(#ff6d6d, #ff6d6d) center bottom 5px/calc(100% - 20px) 2px no-repeat;
+  color: #ff6d6d;
+}
+
+#contact .form-inner input.error::-webkit-input-placeholder,
+#contact .form-inner textarea.error::-webkit-input-placeholder {
+  color: #ff6d6d;
+}
+
+#contact .form-inner input.error:-ms-input-placeholder,
+#contact .form-inner textarea.error:-ms-input-placeholder {
+  color: #ff6d6d;
+}
+
+#contact .form-inner input.error::-ms-input-placeholder,
+#contact .form-inner textarea.error::-ms-input-placeholder {
+  color: #ff6d6d;
+}
+
+#contact .form-inner input.error::placeholder,
+#contact .form-inner textarea.error::placeholder {
+  color: #ff6d6d;
+}
+
+#contact input.success,
+#contact textarea.success {
+  background: -webkit-gradient(linear, left top, left bottom, from(var(--green)), to(var(--green))) center bottom 5px/calc(100% - 20px) 2px no-repeat;
+  background: linear-gradient(var(--green), var(--green)) center bottom 5px/calc(100% - 20px) 2px no-repeat;
+  color: var(--green);
+}
+
+#contact .form-inner input.success::-webkit-input-placeholder,
+#contact .form-inner textarea.success::-webkit-input-placeholder {
+  color: var(--green);
+}
+
+#contact .form-inner input.success:-ms-input-placeholder,
+#contact .form-inner textarea.success:-ms-input-placeholder {
+  color: var(--green);
+}
+
+#contact .form-inner input.success::-ms-input-placeholder,
+#contact .form-inner textarea.success::-ms-input-placeholder {
+  color: var(--green);
+}
+
+#contact .form-inner input.success::placeholder,
+#contact .form-inner textarea.success::placeholder {
+  color: var(--green);
 }
 
 #contact input {

@@ -15,57 +15,50 @@ form.addEventListener("submit", (e) => {
   if (fullNameValue === "" || fullNameValue == null) {
     //show error
     //add error class
-    setErrorFor(fullName, "Volledige naam invullen");
+    setErrorFor(fullName, "Full name required");
     e.preventDefault();
   } else {
     //add success class
-    setSuccessFor(fullName, "success");
+    setSuccessFor(fullName);
   }
 
   //MAIL
   if (mailValue === "" || mailValue == null) {
-    setErrorFor(mail, "Email invullen");
+    setErrorFor(mail, "Email required");
     e.preventDefault();
   } else if (!mailVal(mailValue)) {
-    setErrorFor(mail, "Ongeldige email!");
+    setErrorFor(mail, "invalid e-mail!");
     e.preventDefault();
   } else {
-    setSuccessFor(mail, "success");
+    setSuccessFor(mail);
   }
 
   //SUBJECT
   if (subjectValue === "" || subjectValue == null) {
-    setErrorFor(subject, "Onderwerp invullen");
+    setErrorFor(subject, "Subject required");
     e.preventDefault();
   } else {
-    setSuccessFor(subject, "success");
+    setSuccessFor(subject);
   }
 
   //MESSAGE
   if (messageValue === "" || messageValue == null) {
-    setErrorFor(message, "Vraag invullen");
+    setErrorFor(message, "Message required");
     e.preventDefault();
   } else {
-    setSuccessFor(message, "success");
+    setSuccessFor(message);
   }
 });
 
 function setErrorFor(input, message) {
-  const formGroup = input.parentElement;
-  const small = formGroup.querySelector("small");
+  input.value = "";
+  input.placeholder = message;
 
-  small.innerText = message;
-
-  formGroup.className = "form-group error";
+  input.className = "error";
 }
 
-function setSuccessFor(input, message) {
-  const formGroup = input.parentElement;
-  const small = formGroup.querySelector("small");
-
-  small.innerText = message;
-
-  formGroup.className = "form-group success";
+function setSuccessFor(input) {
+  input.className = "success";
 }
 
 function mailVal(mail) {

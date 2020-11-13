@@ -458,22 +458,7 @@ section {
   display: flex;
   flex-direction: column;
 }
-#contact .form-group {
-  display: flex;
-  flex-direction: column;
-}
 
-#contact .error small {
-  text-align: center;
-  margin-bottom: 20px;
-  color: red;
-}
-
-#contact .success small {
-  text-align: center;
-  margin-bottom: 20px;
-  color: var(--green);
-}
 #contact input,
 #contact textarea {
   font-size: 18px;
@@ -485,6 +470,27 @@ section {
   background-color: var(--navy);
   border: none;
   outline: none;
+}
+#contact input.error,
+#contact textarea.error {
+  background: linear-gradient(rgb(255, 109, 109), rgb(255, 109, 109)) center
+    bottom 5px / calc(100% - 20px) 2px no-repeat;
+  color: rgb(255, 109, 109);
+}
+#contact .form-inner input.error::placeholder,
+#contact .form-inner textarea.error::placeholder {
+  color: rgb(255, 109, 109);
+}
+
+#contact input.success,
+#contact textarea.success {
+  background: linear-gradient(var(--green), var(--green)) center bottom 5px /
+    calc(100% - 20px) 2px no-repeat;
+  color: var(--green);
+}
+#contact .form-inner input.success::placeholder,
+#contact .form-inner textarea.success::placeholder {
+  color: var(--green);
 }
 
 #contact input {
