@@ -18,6 +18,11 @@
   --font-mono: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
 }
 
+* {
+  padding: 0;
+  margin: 0;
+}
+
 html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -42,7 +47,6 @@ h3,
 h4,
 h5,
 h6 {
-  margin: 0px 0px 10px;
   font-weight: 600;
   color: var(--lightest-slate);
   line-height: 1.1;
@@ -540,7 +544,6 @@ section {
 
 #contact h1 {
   font-size: 30px;
-  margin-top: 40px;
 }
 
 #contact .content-intro {
