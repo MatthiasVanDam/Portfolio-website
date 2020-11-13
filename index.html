@@ -104,7 +104,7 @@
               </div>
             </div>
             <div class="photo">
-              <div class="img">Test</div>
+              <div class="img">Photo</div>
             </div>
           </div>
         </div>
@@ -114,7 +114,23 @@
       <section id="work">
         <div class="section-inner">
           <h2 class="numbered-heading">Work</h2>
-          <div class="content">content</div>
+          <div class="content">
+            <!--Project container-->
+            <div class="project-container">
+
+              <div class="project-nav">
+              <a href="#">o</a>
+              <a href="#">o</a>
+              <a href="#">o</a>
+              <a href="#">o</a>
+              </div>
+
+              <div class="project-content">
+
+              </div>
+
+            </div>
+          </div>
         </div>
       </section>
 
@@ -126,15 +142,30 @@
             <h1>Get in Touch!</h1>
             <div class="content-intro"> I'm currently looking for new opportunities, so my inbox is always open. If you have any questions or just want to say hi, I'll try my best to get back to you asap!</div>
              
-              <form id="myForm">
+              <form id="myForm" action="https://formspree.io/f/mpzoldzb" method="POST">
           
                 <div class="form-inner"> 
-
-                  <input type="text" name="name" placeholder="Full name">
-                  <input type="text" name="email" placeholder="E-mail">
-                  <input type="text" name="subject" placeholder="Subject">
-                  <textarea name="message" placeholder="Message"></textarea>
-                  
+                  <div class="form-group">   
+                    <input id="fullName" type="text" name="fullName" placeholder="Full name">
+                    <small></small>
+                  </div>
+               
+                  <div class="form-group">   
+                    <input id="mail" type="text" name="_replyto" placeholder="E-mail" >
+                    <small></small>
+                  </div>
+               
+                  <div class="form-group">   
+                    <input id="subject" type="text" name="subject" placeholder="Subject">
+                    <small></small>
+                  </div>
+               
+                  <div class="form-group">  
+                    <textarea id="message" name="message" placeholder="Message"></textarea>
+                    <small></small>
+                  </div>
+                
+                  <button class="button" type="submit">Send</button>
                 </div>
 
               </form>
@@ -167,5 +198,6 @@
     crossorigin="anonymous"
   ></script>
   <script src="js/ham.js"></script>
+  <script src="js/form.js"></script>
   <script src="js/scramble.js"></script>
 </html>

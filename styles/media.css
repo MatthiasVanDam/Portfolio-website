@@ -1,3 +1,12 @@
+@media screen and (max-width: 1150px) {
+  .section-inner,
+  .nav-inner,
+  .header-inner,
+  .footer-inner {
+    width: 75%;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .nav-links {
     display: none;
@@ -22,6 +31,17 @@
   }
   #about .intro {
     padding: 0;
+    width: 100%;
+  }
+  #about .photo {
+    margin-top: 50px;
+    padding: 0;
+    width: 100%;
+  }
+  #contact form,
+  #contact .content-intro {
+    width: 100%;
+    text-align: justify;
   }
 }
 
